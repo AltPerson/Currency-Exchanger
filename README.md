@@ -9,7 +9,7 @@ SPA which converts currency.<br>
 
 FRAMEWORK - React<br>
 METHODS - ReactHooks(useState,useEffect),fetchRequest, async/await promise, redux, react-router<br>
-API - https://v6.exchangerate-api.com (ExchangeRate-API)
+API - https://v6.exchangerate-api.com (ExchangeRate-API)<br>
 UnitTests - Was written simple unit tests on react-testing-library.
 
 ## URL:https://altperson.github.io/currencyExchanger/<br>

@@ -18,7 +18,7 @@ export function fetchCurrencyList(currencyName = "UAH") {
         throw Error(data["error-type"]);
       }
     } catch (e) {
-      dispatch(setFetchError(true, e.message));
+      dispatch(setFetchError(true, `Unsupported code [${currencyName}]`));
     }
   };
 }

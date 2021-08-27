@@ -42,15 +42,6 @@ export const getCurrencies = (inputValue, dispatch, currencyList) => {
   firstCurrency = firstCurrency.join("").toUpperCase();
   secondCurrency = secondCurrency.join("").toUpperCase();
   numberValue = Number(numberValue.join("")).toFixed(2);
-  if (!Object.keys(currencyList).includes(firstCurrency)) {
-    dispatch(setFetchError(true, `Unsupported code [${firstCurrency}]`));
-    return;
-  } else if (!Object.keys(currencyList).includes(secondCurrency)) {
-    dispatch(setFetchError(true, `Unsupported code [${secondCurrency}]`));
-    return;
-  } else {
-    dispatch(setQueryOptions({ firstCurrency, secondCurrency, numberValue }));
-    dispatch(fetchCurrencyList(firstCurrency));
-    return;
-  }
+  dispatch(setQueryOptions({ firstCurrency, secondCurrency, numberValue }));
+  dispatch(fetchCurrencyList(firstCurrency));
 };

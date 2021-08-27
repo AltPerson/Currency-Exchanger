@@ -30,11 +30,6 @@ function Home() {
     getCurrencies(inputValue.replace(/,/gi, "."), dispatch, currencyList);
     setInputValue("");
   };
-
-  useEffect(() => {
-    dispatch(fetchCurrencyList());
-  }, []);
-
   return (
     <div className="home">
       <div className="home-wrapper">
@@ -57,12 +52,14 @@ function Home() {
             timeout={3000}
           />
         </div>
-      ) : Object.keys(queryOptions).length === 0 ? (
+      ) : queryOptions.firstCurrency === undefined ||
+        Object.keys(queryOptions).length === 0 ? (
         ""
       ) : (
         <CurrencyValue
           currencyList={currencyList}
           queryOptions={queryOptions}
+          dispatch={dispatch}
         />
       )}
     </div>

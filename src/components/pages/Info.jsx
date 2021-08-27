@@ -4,6 +4,7 @@ import { fetchCurrencyList } from "../../actions/fetchCurrencyList";
 import CurrencyList from "../CurrencyList";
 import CurrencySelector from "../CurrencySelector";
 import Loader from "react-loader-spinner";
+import { setQueryOptions } from "../../reducers/currencyReducer";
 
 import "./Info.css";
 
@@ -16,9 +17,9 @@ function Info() {
     dispatch(fetchCurrencyList(e.target.value));
   };
   useEffect(() => {
+    dispatch(setQueryOptions({}));
     dispatch(fetchCurrencyList());
   }, []);
-
   return (
     <div className="currency-info currency">
       <div className="currency-wrapper">

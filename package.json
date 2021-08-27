@@ -2,6 +2,7 @@
   "name": "react-app-without-name",
   "version": "0.1.0",
   "private": true,
+	"homepage": "https://altperson.github.io/currencyExchanger/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
@@ -21,7 +22,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test"
+    "test": "react-scripts test",
+		"predeploy": "npm run build",
+		"deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [

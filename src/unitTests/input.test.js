@@ -19,9 +19,9 @@ describe("Input error catching", () => {
     const btn = getByTestId("btn");
     expect(input.value).toBe("");
     fireEvent.click(btn);
-    screen.getByText("Empty query");
+    expect(screen.getByRole("alert")).toHaveTextContent("Empty query");
   });
-  it("if input data is incorrect", () => {
+  it("if input data is incorrect", async () => {
     const store = createStore(currencyReducer, applyMiddleware(thunk));
     const { getByTestId } = render(
       <Provider store={store}>
@@ -36,8 +36,9 @@ describe("Input error catching", () => {
       },
     });
     fireEvent.click(btn);
-    screen.getByText("Unsupported code [SSS]");
+    await screen.findByText("Unsupported code [SSS]");
   });
+
   it("if input is too short", () => {
     const store = createStore(currencyReducer, applyMiddleware(thunk));
     const { getByTestId } = render(
@@ -53,6 +54,6 @@ describe("Input error catching", () => {
       },
     });
     fireEvent.click(btn);
-    screen.getByText("Short query");
+    expect(screen.getByRole("alert")).toHaveTextContent("Short query");
   });
 });

@@ -7,7 +7,11 @@ function ErrorHandler({ errorType, dispatch }) {
       dispatch(setFetchError(false));
     }, 3000);
   }, []);
-  return <div className="error-info">{errorType}</div>;
+  return (
+    <div role="alert" className="error-info">
+      {errorType}
+    </div>
+  );
 }
 
 export default ErrorHandler;

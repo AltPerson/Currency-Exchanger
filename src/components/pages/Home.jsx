@@ -1,7 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getCurrencies } from "../../actions/getCurrencies";
-import { fetchCurrencyList } from "../../actions/fetchCurrencyList";
 import { setFetchError } from "../../reducers/currencyReducer";
 import Loader from "react-loader-spinner";
 import ErrorHandler from "../ErrorHandler";

@@ -1,3 +1,7 @@
+.currency-info {
+  margin-top: 10px;
+}
+
 .currency,
 .selector {
   display: flex;

@@ -11,7 +11,7 @@ function Exchanger({ inputValue, setInputValue, handleButton }) {
         type="text"
         className="exchanger__input"
         value={inputValue}
-        placeholder="15 RUB in USD"
+        placeholder="15 UAH in USD"
         onChange={(e) => {
           setInputValue(e.target.value);
           clearCommaInput(inputValue, setInputValue);

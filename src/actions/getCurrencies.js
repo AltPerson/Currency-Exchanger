@@ -1,7 +1,7 @@
 import { setQueryOptions, setFetchError } from "../reducers/currencyReducer";
 import { fetchCurrencyList } from "../actions/fetchCurrencyList";
 
-export const getCurrencies = (inputValue, dispatch, currencyList) => {
+export const getCurrencies = (inputValue, dispatch) => {
   let numberValue = [];
   let firstCurrency = [];
   let secondCurrency = [];
@@ -41,7 +41,9 @@ export const getCurrencies = (inputValue, dispatch, currencyList) => {
   }
   firstCurrency = firstCurrency.join("").toUpperCase();
   secondCurrency = secondCurrency.join("").toUpperCase();
-  numberValue = Number(numberValue.join("")).toFixed(2);
+  numberValue = numberValue.includes(".")
+    ? Number(numberValue.filter((item) => item !== " ").join("")).toFixed(2)
+    : Number(numberValue.filter((item) => item !== " ").join(""));
   dispatch(setQueryOptions({ firstCurrency, secondCurrency, numberValue }));
   dispatch(fetchCurrencyList(firstCurrency));
 };

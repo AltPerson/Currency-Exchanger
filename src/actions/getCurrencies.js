@@ -42,7 +42,7 @@ export const getCurrencies = (inputValue, dispatch) => {
   firstCurrency = firstCurrency.join("").toUpperCase();
   secondCurrency = secondCurrency.join("").toUpperCase();
   numberValue = numberValue.includes(".")
-    ? Number(numberValue.filter((item) => item !== " ").join("")).toFixed(2)
+    ? Number(numberValue.filter((item) => item !== " ").join("")).toFixed(3)
     : Number(numberValue.filter((item) => item !== " ").join(""));
   dispatch(setQueryOptions({ firstCurrency, secondCurrency, numberValue }));
   dispatch(fetchCurrencyList(firstCurrency));

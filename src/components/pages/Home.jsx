@@ -26,7 +26,13 @@ function Home() {
       setInputValue("");
       return;
     }
-    getCurrencies(inputValue.replace(/,/gi, "."), dispatch, currencyList);
+    const correctRequest = /^\s*\d+[,.]?\d+\s*[a-z]{3}\s*in\s*[a-z]{3}/g;
+    if (!correctRequest.test(inputValue)) {
+      dispatch(setFetchError(true, "Incorrect query"));
+      setInputValue("");
+      return;
+    }
+    getCurrencies(inputValue.replace(/,/g, "."), dispatch, currencyList);
     setInputValue("");
   };
   return (

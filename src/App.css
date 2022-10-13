@@ -11,7 +11,7 @@
 .app {
   background: url("img/17455.jpg") no-repeat center center fixed;
   background-size: cover;
-  height: 100vh;
+  height: 100%;
   width: auto;
 }
 

@@ -7,7 +7,7 @@ export const calculateCurrency = (currencyList, queryOptions) => {
         .indexOf(".") !== -1
         ? (
             currencyList[queryOptions.secondCurrency] * queryOptions.numberValue
-          ).toFixed(3)
+          ).toFixed(2)
         : currencyList[queryOptions.secondCurrency] * queryOptions.numberValue
     } ${queryOptions.secondCurrency}`
   );

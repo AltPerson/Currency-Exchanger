@@ -4,7 +4,7 @@
 
 Task was taken from "https://github.com/appbooster/test-assignments/blob/master/tasks/frontend.md"<br>
 SPA which converts currency.<br>
-![image](https://user-images.githubusercontent.com/39427362/200375596-bed70d96-f530-47d3-a8cd-a0ce5008c700.png)
+![image](https://user-images.githubusercontent.com/39427362/200375763-4009f86a-5e91-4abf-9093-c900b80107aa.png)
 
 
 ## USED TECHNIQUES<br>

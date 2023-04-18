@@ -1,8 +1,13 @@
 import CurrencyFlag from "react-currency-flags";
-import { FcSearch } from "react-icons/fc";
+import { FcCalculator } from "react-icons/fc";
 import { Link } from "react-router-dom";
 
-function CurrencySelector({ baseCurrency, currencyList, handleChange }) {
+function CurrencySelector({
+  baseCurrency,
+  currencyList,
+  handleChange,
+  inputHandler,
+}) {
   return (
     <div className="info-selected__currency currency_selector selector">
       <div className="selector__title">Selected Currency:</div>
@@ -18,8 +23,14 @@ function CurrencySelector({ baseCurrency, currencyList, handleChange }) {
           ))}
         </select>
       </div>
+      <input
+        className="selector__input"
+        type="text"
+        maxLength={3}
+        onChange={inputHandler}
+      />
       <Link to="/">
-        <FcSearch className="selector__search" />
+        <FcCalculator className="selector__search" />
       </Link>
     </div>
   );

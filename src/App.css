@@ -12,11 +12,10 @@
   background: url("img/17455.jpg") no-repeat center center fixed;
   background-size: cover;
   height: 100%;
-  width: auto;
 }
 
 .app-wrapper {
   max-width: 1300px;
-  padding: 0 10px 0 20px;
+  padding: 0 10px;
   margin: 0 auto;
 }

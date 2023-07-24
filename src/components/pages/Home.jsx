@@ -1,39 +1,39 @@
-import { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { getCurrencies } from "../../actions/getCurrencies";
-import { setFetchError } from "../../reducers/currencyReducer";
-import Loader from "react-loader-spinner";
-import ErrorHandler from "../ErrorHandler";
-import Exchanger from "../Exchanger";
-import "./Home.css";
-import CurrencyValue from "../CurrencyValue";
+import { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { getCurrencies } from '../../actions/getCurrencies';
+import { setFetchError } from '../../reducers/currencyReducer';
+import Loader from 'react-loader-spinner';
+import ErrorHandler from '../ErrorHandler';
+import Exchanger from '../Exchanger';
+import './Home.css';
+import CurrencyValue from '../CurrencyValue';
 
 function Home() {
   const dispatch = useDispatch();
   const isFetching = useSelector((state) => state.isFetching);
-  const [inputValue, setInputValue] = useState("");
+  const [inputValue, setInputValue] = useState('');
   const currencyList = useSelector((state) => state.currencyList);
   const fetchError = useSelector((state) => state.fetchError);
   const queryOptions = useSelector((state) => state.queryOptions);
 
   const handleButton = () => {
     if (inputValue.length < 1) {
-      dispatch(setFetchError(true, "Empty query"));
+      dispatch(setFetchError(true, 'Empty query'));
       return;
     }
     if (inputValue.length < 12) {
-      dispatch(setFetchError(true, "Short query"));
-      setInputValue("");
+      dispatch(setFetchError(true, 'Short query'));
+      setInputValue('');
       return;
     }
     const correctRequest = /^\s*\d+[,.]?\d+\s*[a-z]{3}\s*in\s*[a-z]{3}/g;
     if (!correctRequest.test(inputValue)) {
-      dispatch(setFetchError(true, "Incorrect query"));
-      setInputValue("");
+      dispatch(setFetchError(true, 'Incorrect query'));
+      setInputValue('');
       return;
     }
-    getCurrencies(inputValue.replace(/,/g, "."), dispatch, currencyList);
-    setInputValue("");
+    getCurrencies(inputValue.replace(/,/g, '.'), dispatch, currencyList);
+    setInputValue('');
   };
   return (
     <div className="home">
@@ -48,7 +48,7 @@ function Home() {
       {fetchError.isError ? (
         <ErrorHandler dispatch={dispatch} errorType={fetchError.errorMsg} />
       ) : isFetching ? (
-        <div className="home-loader" style={{ marginTop: "10px" }}>
+        <div className="home-loader" style={{ marginTop: '10px' }}>
           <Loader
             type="TailSpin"
             color="blue"
@@ -59,7 +59,7 @@ function Home() {
         </div>
       ) : queryOptions.firstCurrency === undefined ||
         Object.keys(queryOptions).length === 0 ? (
-        ""
+        ''
       ) : (
         <CurrencyValue
           currencyList={currencyList}

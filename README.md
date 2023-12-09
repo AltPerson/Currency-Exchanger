@@ -18,7 +18,7 @@ METHODS - ReactHooks(useState,useEffect),fetchRequest, async/await promise, redu
 API - https://v6.exchangerate-api.com (ExchangeRate-API)<br>
 UnitTests - Was written simple unit tests on react-testing-library.
 
-## URL:https://altperson.github.io/currencyExchanger/<br>
+## URL:https://altperson.github.io/Currency-Exchanger/<br>
 
 ## BRANCHES<br>
 
